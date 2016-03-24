@@ -10,11 +10,11 @@ dialog.js 仅包含一个function，
 3:类似微信已完成自动消失的弹框
 
 var type1 = {  
-	"head": "",  
-	"content": "请填写金额",  
-	"type": "2",  
-	"cancel":function(){},  
-	"confirm":function(){}  
+>	"head": "",  
+>	"content": "请填写金额",  
+>	"type": "2",  
+>	"cancel":function(){},  
+>	"confirm":function(){}  
 };  
 var type2 = {  
 	content:"2555",  
