@@ -9,7 +9,7 @@ dialog.js 仅包含一个function，
 2:普通的两个按钮的弹框
 3:类似微信已完成自动消失的弹框
 
-var type1 = {
+var type1 = {  
 	"head": "",
 	"content": "请填写金额",
 	"type": "2",
