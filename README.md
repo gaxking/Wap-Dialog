@@ -16,14 +16,15 @@ var type1 = {
 >	"cancel":function(){},  
 >	"confirm":function(){}  
 };  
+
 var type2 = {  
-	content:"2555",  
-	cancel:function(){}  
+>	content:"2555",  
+>	cancel:function(){}  
 };  
 
 var type3 = {  
-	"content": "已完成",  
-	"type": 3  
+>	"content": "已完成",  
+>	"type": 3  
 }  
 
 dialog(type1);
