@@ -17,20 +17,21 @@ function dialog(obj) {
 		},1000);
 
 	}else{
-		content +='<div class="big_bg" style="position:fixed;top:0;left:0;width:100%;height:'+window.innerHeight+'px;z-index:9999;background:rgba(0,0,0,.4)"></div><div class="dialog_content" style="background:#fff;min-width:70%;position:fixed;z-index:10000;border-radius:10px;text-align:center;font-size:18px;left:50%;top:'+window.innerHeight/2+'px;-webkit-transform:translate(-50%,-50%)">';
+		content +='<div class="big-bg"></div><div class="dialog-content">';
 		if(obj.head) {
-			content +='<div style="line-height:45px;border-bottom:1px solid #C7C2C2">'+obj.head+'</div>';
+			content +='<div class="dialog-head">'+obj.head+'</div>';
 		}
-		content +='<div style="margin:0 auto;padding:15px 10px;font-size:16px;line-height:23px">'+obj.content+'</div><div style="border-top: 1px solid #C7C2C2;color: #42C4F3;" class="ui-dialog-ft">';
+		content +='<div class="content">'+obj.content+'</div><div class="ui-dialog-ft">';
 		if(obj.type == 1) {
-			content +='<div class="cancel" style="width: 100%;line-height:45px;height:45px;">确认</div></div></div>';
+			content +='<div class="cancel cancel1">确认</div></div></div>';
 		}else{
-			content +='<div class="cancel" style="width:49.7%;line-height:45px;height:45px;float:left;border-right:1px solid #C7C2C2">取消</div><div class="confirm" style="width:49.8%;line-height:45px;height:45px;float:left">确认</div></div></div>';
+			content +='<div class="cancel">取消</div><div class="confirm">确认</div></div></div>';
 		}
 		var newdialog = document.createElement('div');
 		newdialog.id="dialog";
 		newdialog.innerHTML = content;
 		document.body.appendChild(newdialog);
+		addstyle();
 		var	dialogcancel = document.querySelector("#dialog .cancel"),
 			dialogconfirm = document.querySelector("#dialog .confirm");
 
@@ -57,6 +58,14 @@ function dialog(obj) {
 				dialogcancel.removeEventListener("click", removedialog, false);
 				document.removeEventListener("touchmove", stopDefault, false);
 				newdialog.parentNode.removeChild(newdialog);
+				document.head.removeChild(document.getElementById('dialogcss'));
+			}
+			function addstyle(){
+				var style = document.createElement("style");
+				style.id='dialogcss';
+				style.innerHTML ='.big-bg{position:fixed;top:0;left:0;width:100%;height:'+window.innerHeight+'px;z-index:9999;background:rgba(0,0,0,.4);}.dialog-content{background:#fff;min-width:70%;top:'+window.innerHeight/2+'px;position:fixed;z-index:10000;border-radius:10px;text-align:center;font-size:18px;left:50%;-webkit-transform:translate(-50%,-50%);}.dialog-head{line-height:45px;border-bottom:1px solid #C7C2C2}.cancel{width:49.7%;line-height:45px;height:45px;float:left;border-right:1px solid #C7C2C2;border-bottom-left-radius: 10px;}.confirm{width:49.8%;line-height:45px;height:45px;float:left;border-bottom-right-radius: 10px;}.cancel1{width: 100%;line-height:45px;height:45px;border-bottom-left-radius: 10px;border-bottom-right-radius: 10px;}.content{margin:0 auto;padding:15px 10px;font-size:16px;line-height:23px}.ui-dialog-ft{border-top: 1px solid #C7C2C2;color: #42C4F3;}.cancel:active{background-color:#E0DFDF;}.confirm:active{background-color:#E0DFDF;}';
+				document.head.appendChild(style);
 			}
 	}
 }
+
