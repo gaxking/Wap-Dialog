@@ -28,3 +28,5 @@ var type3 = {
 }  
 
 dialog(type1);
+
+[运行DEMO](http://www.luoyongjie.cn/mygit/Wap-Dialog)
